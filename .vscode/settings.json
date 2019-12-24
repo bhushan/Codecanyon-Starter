@@ -1,0 +1,85 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.editor": "json",
+    "editor.fontFamily": "Operator Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+    "editor.lineHeight": 40,
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Slime",
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "d"
+            ],
+            "after": [
+                "d",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
+    "vim.leader": ",",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-w>": false
+    },
+    "editor.formatOnSaveTimeout": 5000,
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.executablePath": "${extensionPath}\\php-cs-fixer.phar",
+    "php-cs-fixer.lastDownload": 1572372923304,
+    "diffEditor.renderSideBySide": false,
+    "git.enableSmartCommit": true,
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "editor.lineNumbers": "relative",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "blade.format.enable": true,
+    "importCost.timeout": 100000,
+    "importCost.typescriptExtensions": [
+        "\\.tsx?$",
+        "\\.vue$"
+    ],
+    "importCost.javascriptExtensions": [
+        "\\.jsx?$",
+        "\\.vue$"
+    ],
+    "better-phpunit.phpunitBinary": "phpunit",
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "vsicons.dontShowNewVersionMessage": true,
+    "terminal.integrated.copyOnSelection": true,
+    "search.useIgnoreFiles": false
+}
