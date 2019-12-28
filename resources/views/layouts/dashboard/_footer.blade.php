@@ -1,9 +1,10 @@
 <footer class="main-footer">
-    <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-        Anything you want
+        {{ __('Creative Ideas, Innovative Solutions') }}
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All
-    rights reserved.
+    &copy; {{ __('2018') }}-{{ \Carbon\Carbon::now()->year}}
+    <a class="font-weight-bold" href="//enlighttechnologies.in" target="_blank">
+        {{ __('Enlight Technologies') }}
+    </a>.
+    {{ __('All rights reserved.') }}
 </footer>

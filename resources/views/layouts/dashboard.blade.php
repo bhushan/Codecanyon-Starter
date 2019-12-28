@@ -5,7 +5,7 @@
     @include('layouts._head')
 </head>
 
-<body>
+<body class="sidebar-mini">
 
     <div id="app" class="wrapper">
 
