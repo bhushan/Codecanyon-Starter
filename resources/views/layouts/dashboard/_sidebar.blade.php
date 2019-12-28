@@ -5,6 +5,9 @@
 
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="{{ auth()->user()->avatar }}" class="img-circle elevation-2" alt="{{ auth()->user()->name }}">
+            </div>
             <div class="info text-light">
                 {{ auth()->user()->name }}
             </div>

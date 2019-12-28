@@ -24,4 +24,12 @@ class UserTest extends TestCase
 		$this->assertTrue($user->hasAnyRole('admin'));
 		$this->assertTrue($user->hasAnyRole(['admin']));
 	}
+
+	/** @test */
+	public function user_has_default_avatar()
+	{
+		$user = create('App\User');
+
+		$this->assertEquals(asset('avatars/default.png'), $user->avatar);
+	}
 }
