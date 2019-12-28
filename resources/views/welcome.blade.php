@@ -3,14 +3,15 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Welcome</div>
+        <div class="col-12 text-center">
 
-                <div class="card-body">
-                    sdfsdf
-                </div>
-            </div>
+            <h1 class="display-4">
+                <img src="{{ asset('logo.png') }}" alt="Enlight Technologies" height="250">
+            </h1>
+            <p class="lead">Creative Ideas, Innovative Solutions</p>
+            <hr class="my-4">
+            <p>Content</p>
+
         </div>
     </div>
 </div>

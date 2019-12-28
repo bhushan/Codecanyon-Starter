@@ -10,7 +10,7 @@
 
         @include('layouts._nav')
 
-        <main class="my-5">
+        <main class="my-4">
             @yield('content')
         </main>
     </div>
