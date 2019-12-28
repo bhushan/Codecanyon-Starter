@@ -60,4 +60,14 @@
         </div>
     </div>
 </form>
+@if (Route::has('register'))
+<div class="form-group row justify-content-center mt-3">
+    <div class="col-12">
+        {{ __("Don't have an account?") }}
+        <a title="Register" class="w-100 text-decoration-none" href="{{ route('register') }}">
+            {{ __('Sign Up') }}
+        </a>
+    </div>
+</div>
+@endif
 @endsection

@@ -5,7 +5,7 @@
     @include('layouts._head')
 </head>
 
-<body class="login-page">
+<body class="login-page" style="border-top: 5px solid #1a0dab;">
     <div class="login-box">
         <div class="login-logo">
             <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" height="150">
