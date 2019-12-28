@@ -8,7 +8,9 @@
 <body class="login-page" style="border-top: 5px solid #1a0dab;">
     <div class="login-box">
         <div class="login-logo">
-            <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" height="150">
+            <a href="{{ route('welcome') }}">
+                <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" height="150">
+            </a>
         </div>
 
         <div class="card">
