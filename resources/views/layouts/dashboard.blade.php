@@ -16,7 +16,7 @@
         <div class="content-wrapper">
 
             <div class="content">
-                <div class="container-fluid pt-5">
+                <div class="container-fluid pt-3">
                     @yield('content')
                 </div>
             </div>
