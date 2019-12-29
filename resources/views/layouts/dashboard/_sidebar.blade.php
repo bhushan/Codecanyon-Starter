@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link {{ setActive(['user-settings'])}}">
+                    <a href="#" class="nav-link {{ setActive(['user-settings', 'app-settings'])}}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Settings
@@ -41,6 +41,17 @@
                                 </p>
                             </a>
                         </li>
+                        @if ( auth()->user()->hasAnyRole(['admin']))
+                        <li class="nav-item">
+                            <a href="{{ route('admin.app-settings') }}"
+                                class="nav-link {{ setActive(['app-settings'])}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Application
+                                </p>
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </li>
                 <li class="nav-item">

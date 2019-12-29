@@ -11,7 +11,7 @@
             </div>
 
             <div class="card-body">
-                <form action="" method="post" class="mt-3">
+                <form action="{{ route('patch.user-settings')}}" method="post" class="mt-3">
                     @csrf
                     @method('patch')
                     <div class="input-group mt-3">
@@ -48,7 +48,7 @@
                     </button>
                 </form>
 
-                <form action="" method="post" class="mt-3">
+                <form action="{{ route('patch.user-password') }}" method="post" class="mt-3">
                     @csrf
                     @method('patch')
                     <div class="input-group mt-3">

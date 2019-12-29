@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Setting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -49,5 +50,50 @@ class SettingController extends Controller
 		auth()->user()->update(['password' => bcrypt($validatedData['password'])]);
 
 		return redirect(route('user-settings'))->with('status', 'Password Updated Successfully');
+	}
+
+	public function appSettings()
+	{
+		return view('settings.application');
+	}
+
+	public function postAppSettings(Request $request)
+	{
+		$validatedData = $request->validate([
+			'sitename' => 'required',
+			'description' => 'required',
+			'company' => 'required',
+			'siteurl' => 'required'
+		]);
+
+		Setting::updateOrCreate(
+			['key' => 'sitename'],
+			[
+				'value' => $validatedData['sitename']
+			]
+		);
+
+		Setting::updateOrCreate(
+			['key' => 'description'],
+			[
+				'value' => $validatedData['description']
+			]
+		);
+
+		Setting::updateOrCreate(
+			['key' => 'company'],
+			[
+				'value' => $validatedData['company']
+			]
+		);
+
+		Setting::updateOrCreate(
+			['key' => 'siteurl'],
+			[
+				'value' => $validatedData['siteurl']
+			]
+		);
+
+		return back()->with('status', 'Application Settings Updated Successfully');
 	}
 }

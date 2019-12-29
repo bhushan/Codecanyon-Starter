@@ -17,4 +17,6 @@ Route::group([
 	'middleware' => 'roles',
 	'roles' => ['admin'],
 ], function () {
+	Route::get('app-settings', 'SettingController@appSettings')->name('app-settings');
+	Route::post('app-settings', 'SettingController@postAppSettings')->name('post.app-settings');
 });

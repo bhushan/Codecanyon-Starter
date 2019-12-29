@@ -3,26 +3,30 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Setting;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
-    }
+	/**
+	 * Register any application services.
+	 */
+	public function register()
+	{
+		\View::composer('*', function ($view) {
+			$settings = \Cache::rememberForever('settings', function () {
+				return Setting::all();
+			});
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+			$view->with('settings', $settings);
+		});
+	}
+
+	/**
+	 * Bootstrap any application services.
+	 */
+	public function boot()
+	{
+		Schema::defaultStringLength(191);
+	}
 }
