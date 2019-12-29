@@ -1,7 +1,11 @@
 <aside class="main-sidebar sidebar-dark-primary">
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset('logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle">
-        <span class="brand-text font-weight-light">Enlight</span>
+        <img src="{{ asset('logo.png')}}"
+            alt="{{ ($settings->where('key', 'sitename')->pluck('value')->first() ?? 'Enlight') }}"
+            class="brand-image img-circle">
+        <span class="brand-text font-weight-light">
+            {{ ($settings->where('key', 'sitename')->pluck('value')->first() ?? 'Enlight') }}
+        </span>
     </a>
 
     <div class="sidebar">

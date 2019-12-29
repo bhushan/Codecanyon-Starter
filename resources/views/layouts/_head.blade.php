@@ -3,7 +3,7 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'Laravel') }}</title>
+<title>{{ ($settings->where('key', 'sitename')->pluck('value')->first() ?? 'Enlight Technologies') }}</title>
 
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
 <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicon-48x48.png') }}">

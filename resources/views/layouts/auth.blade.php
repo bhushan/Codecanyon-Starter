@@ -9,7 +9,9 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ route('welcome') }}">
-                <img src="{{ asset('logo.png') }}" alt="{{ config('app.name', 'Laravel') }}" height="150">
+                <img src="{{ asset('logo.png') }}"
+                    alt="{{ ($settings->where('key', 'sitename')->pluck('value')->first() ?? 'Enlight') }}"
+                    height="150">
             </a>
         </div>
 
