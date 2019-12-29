@@ -19,4 +19,7 @@ Route::group([
 ], function () {
 	Route::get('app-settings', 'SettingController@appSettings')->name('app-settings');
 	Route::post('app-settings', 'SettingController@postAppSettings')->name('post.app-settings');
+
+	Route::get('logo-settings', 'SettingController@logoSettings')->name('logo-settings');
+	Route::post('logo-settings', 'SettingController@postLogoSettings')->name('post.logo-settings');
 });

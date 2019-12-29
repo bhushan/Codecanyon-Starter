@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
 {
@@ -95,5 +96,41 @@ class SettingController extends Controller
 		);
 
 		return back()->with('status', 'Application Settings Updated Successfully');
+	}
+
+	public function logoSettings()
+	{
+		return view('settings.logo');
+	}
+
+	public function postLogoSettings(Request $request)
+	{
+		$request->validate([
+			'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+		]);
+
+		File::delete(
+			[
+				public_path('logo.png'),
+				public_path('apple-touch-icon.png'),
+				public_path('favicon-48x48.png'),
+				public_path('favicon-32x32.png'),
+				public_path('favicon-16x16.png')
+			]
+		);
+
+		$logo = request()->file('logo');
+
+		$this->cropAndStoreImage($logo, 'logo.png', 250);
+
+		$this->cropAndStoreImage($logo, 'apple-touch-icon.png', 180);
+
+		$this->cropAndStoreImage($logo, 'favicon-48x48.png', 48);
+
+		$this->cropAndStoreImage($logo, 'favicon-32x32.png', 32);
+
+		$this->cropAndStoreImage($logo, 'favicon-16x16.png', 16);
+
+		return back()->with('status', 'Site Logo and Favicons Updated Successfully');
 	}
 }

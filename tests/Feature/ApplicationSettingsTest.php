@@ -10,7 +10,7 @@ class ApplicationSettingsTest extends TestCase
 	use RefreshDatabase;
 
 	/** @test */
-	public function unauthenticated_users_cant_access_site_settings_route()
+	public function unauthorised_users_cant_access_site_settings_route()
 	{
 		$this->json('get', route('admin.app-settings'))
 		->assertStatus(401);

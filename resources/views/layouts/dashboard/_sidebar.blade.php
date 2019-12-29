@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary">
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset('logo-for-dark-mode.png')}}" alt="AdminLTE Logo" class="brand-image img-circle">
+        <img src="{{ asset('logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle">
         <span class="brand-text font-weight-light">Enlight</span>
     </a>
 
@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link {{ setActive(['user-settings', 'app-settings'])}}">
+                    <a href="#" class="nav-link {{ setActive(['user-settings', 'app-settings', 'logo-settings'])}}">
                         <i class="nav-icon fas fa-cog"></i>
                         <p>
                             Settings
@@ -48,6 +48,15 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Application
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.logo-settings') }}"
+                                class="nav-link {{ setActive(['logo-settings'])}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Logo
                                 </p>
                             </a>
                         </li>

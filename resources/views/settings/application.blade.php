@@ -5,9 +5,11 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3>
-                    Application Settings
-                </h3>
+                <div class="card-title">
+                    <h3>
+                        {{ __('Application Settings') }}
+                    </h3>
+                </div>
             </div>
 
             <div class="card-body">
