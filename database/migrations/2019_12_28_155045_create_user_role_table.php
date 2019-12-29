@@ -6,28 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUserRoleTable extends Migration
 {
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::create('user_role', function (Blueprint $table) {
-			$table->primary(['user_id', 'role_id']);
-			$table->unsignedInteger('user_id');
-			$table->unsignedInteger('role_id');
-			$table->timestamps();
-		});
-	}
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('user_role', function (Blueprint $table) {
+            $table->primary(['user_id', 'role_id']);
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('role_id');
+            $table->timestamps();
+        });
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::dropIfExists('user_role');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('user_role');
+    }
 }

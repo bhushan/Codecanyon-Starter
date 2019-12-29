@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 })->name('welcome');
 
 Auth::routes();
@@ -13,13 +13,13 @@ Route::patch('user-settings', 'SettingController@patchUserSettings')->name('patc
 Route::patch('user-password', 'SettingController@patchUserPassword')->name('patch.user-password');
 
 Route::group([
-	'as' => 'admin.',
-	'middleware' => 'roles',
-	'roles' => ['admin'],
+    'as'         => 'admin.',
+    'middleware' => 'roles',
+    'roles'      => ['admin'],
 ], function () {
-	Route::get('app-settings', 'SettingController@appSettings')->name('app-settings');
-	Route::post('app-settings', 'SettingController@postAppSettings')->name('post.app-settings');
+    Route::get('app-settings', 'SettingController@appSettings')->name('app-settings');
+    Route::post('app-settings', 'SettingController@postAppSettings')->name('post.app-settings');
 
-	Route::get('logo-settings', 'SettingController@logoSettings')->name('logo-settings');
-	Route::post('logo-settings', 'SettingController@postLogoSettings')->name('post.logo-settings');
+    Route::get('logo-settings', 'SettingController@logoSettings')->name('logo-settings');
+    Route::post('logo-settings', 'SettingController@postLogoSettings')->name('post.logo-settings');
 });
