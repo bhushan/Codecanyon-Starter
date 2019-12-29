@@ -6,18 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-	protected $guarded = [];
+    protected $guarded = [];
 
-	protected static function boot()
-	{
-		parent::boot();
+    protected static function boot()
+    {
+        parent::boot();
 
-		static::created(function ($setting) {
-			cache()->forget('settings');
-		});
+        static::created(function ($setting) {
+            cache()->forget('settings');
+        });
 
-		static::updated(function ($setting) {
-			cache()->forget('settings');
-		});
-	}
+        static::updated(function ($setting) {
+            cache()->forget('settings');
+        });
+    }
 }
