@@ -1,8 +1,37 @@
 php:
   preset: laravel
+  risky: true
+  enabled:
+    - long_array_syntax
   disabled:
-    - unused_use
+    - align_double_arrow
   finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+    name: "*.php"
+    not-name: "*.blade.php"
+js:
+  tab-width: 4
+  use-tabs: false
+  print-width: 120
+  double-quotes: false
+  trailing-commas: es5
+  semicolons: true
+  arrow-parens: avoid
+  bracket-spacing: true
+  finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+    name:
+      - "*.js"
+      - "*.jsx"
     not-name:
-      - index.php
-      - server.php
+      - "*.min.js"
+ts: true
+css: true
